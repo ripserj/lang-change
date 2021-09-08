@@ -1,10 +1,14 @@
 import pytest
+import time
 from selenium import webdriver
 
-def test_guest_should_see_login_link(browser):
-    link = "http://selenium1py.pythonanywhere.com/ru/catalogue/coders-at-work_207/"
+def test_item_language(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
     browser.get(link)
-    button = browser.find_element_by_class_name("btn-add-to-basket")
+    time.sleep(2)
+    btn = browser.find_element_by_class_name("btn-add-to-basket")
+    assert btn.is_enabled(), "NO BUTTON!"
+
 
 
     
